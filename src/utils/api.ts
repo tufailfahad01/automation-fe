@@ -7,9 +7,9 @@ const api = axios.create({
   },
 });
 
-export const processPrompt = async (prompt: string) => {
+export const processPrompt = async (title: string, content: string) => {
   try {
-    const response = await api.post('/api/process', { prompt });
+    const response = await api.post('/api/process', { title, content });
     return response.data;
   } catch (error: any) {
     if (error.response && error.response.data) {
